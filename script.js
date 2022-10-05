@@ -1,10 +1,10 @@
 // Assignment Code
-var specialCharacters = "!@#$%^&*()?><:";
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "1234567890";
-
-var all = specials + lowercase + uppercase + numbers;
+function generatePassword() {
+  var specialCharacters = "!@#$%^&*()?><:";
+  var lowercase = "abcdefghijklmnopqrstuvwxyz";
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numbers = "1234567890";
+}
 
 amountCharacters = prompt("Choose a length of characters from 8-128.")
   if (amountCharacters < 8) {
@@ -15,10 +15,16 @@ amountCharacters = prompt("Choose a length of characters from 8-128.")
     alert("Your password will be exactly " + amountCharacters + " characters long.");
   }
 
-var confirmationSpecialCharacter ="";
+var confirmationSpecialCharacter = "";
 var confirmLowercase;
-var confrimUppercase;
+var confirmUppercase;
 var confirmNumbers; 
+
+var confirmationSpecialCharacter = confirm("would you like to use any special characters?");
+var confirmLowercase = confirm("would you like to use any lowercase letters?")
+var confirmUppercase = confirm("would you like to use any uppercase letters?")
+var confirmNumbers = confirm("would you like to use any numbers?")
+
 
 
 
@@ -31,8 +37,19 @@ function writePassword() {
 
 }
 
+const createPassword = (amountCharacters, characters) => {
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
+  }
+  //return password;
+  generateBtn.addEventListener("click", createPassword);
+};
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//generateBtn.addEventListener("click", writePassword);
 
 
 //writePassword was changed to generatePassword
