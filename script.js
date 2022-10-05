@@ -1,5 +1,5 @@
 // Assignment Code
-var specials = "!@#$%^&*()?><:";
+var specialCharacters = "!@#$%^&*()?><:";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "1234567890";
@@ -8,14 +8,18 @@ var all = specials + lowercase + uppercase + numbers;
 
 amountCharacters = prompt("Choose a length of characters from 8-128.")
   if (amountCharacters < 8) {
-    console.log ("try a larger number.");
+    alert ("Try a larger number.");
   } else if (amountCharacters > 128) {
-    console.log ("try a smaller number.");
+    alert ("Try a smaller number.");
   } else {
-    alert("your password will be exactly " + amountCharacters + " characters long.");
+    alert("Your password will be exactly " + amountCharacters + " characters long.");
   }
 
-var generateBtn = document.querySelector("#generate");
+var confirmationSpecialCharacter ="";
+var confirmLowercase;
+var confrimUppercase;
+var confirmNumbers; 
+
 
 
 // Write password to the #password input
